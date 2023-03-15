@@ -72,7 +72,7 @@ const options = [
         ]
     },
     {
-        label: '眼睛', value: 'glasses', children: [
+        label: '眼镜', value: 'glasses', children: [
             { label: '有眼镜', value: 'glasses-0' },
             { label: '太阳眼镜', value: 'glasses-1' },
             { label: '无眼镜', value: 'glasses-2' },
@@ -110,7 +110,7 @@ const message_403 = ref('')
                     { label: '性别', value: 'gender' },
                     { label: '笑脸', value: 'smile' },
                     { label: '种族', value: 'race' },
-                    { label: '眼睛', value: 'glasses' },
+                    { label: '眼镜', value: 'glasses' },
                     { label: '年龄', value: 'age' },
                     { label: '发色', value: 'hair' }
                 ]" />

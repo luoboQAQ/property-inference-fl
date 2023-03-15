@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 import EChartImage from '@/components/EChartImage.vue';
 import ModelControl from '@/components/ModelControl.vue';
+import ModelInfo from '@/components/ModelInfo.vue';
 
 const load = ref(false)
 const image = ref(null)
@@ -28,9 +29,7 @@ function update(task,attr,property,tittle){
       </n-gradient-text>
     </n-gi>
     <n-gi span="6">
-      <n-card style="height: 300px;">
-        123
-      </n-card>
+      <model-info :load="load"/>
     </n-gi>
   </n-grid>
   <br>

@@ -78,7 +78,8 @@ const option = {
     data: ['准确率', 'p值']
   },
   xAxis: {
-    type: 'category'
+    type: 'category',
+    name: '轮次'
   },
   yAxis: {
     name: '准确率'
