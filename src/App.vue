@@ -1,13 +1,11 @@
 <script setup>
-import MainLayout from './layouts/MainLayout.vue';
+import MainLayout from './layouts/MainLayout.vue'
 </script>
 
 <template>
   <main>
-    <MainLayout/>
+    <MainLayout />
   </main>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
