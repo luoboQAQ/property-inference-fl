@@ -7,11 +7,13 @@ import ScoreTable from '@/components/ScoreTable.vue'
 
 const load = ref(false)
 const image = ref(null)
+const score = ref(null)
 
 function update(task, attr, property, tittle) {
   load.value = true
   setTimeout(() => {
     image.value.update(task, attr, property, tittle)
+    score.value.update(task, attr, property)
     load.value = false
   }, 3000)
 }
@@ -37,7 +39,7 @@ function update(task, attr, property, tittle) {
       <e-chart-image :load="load" ref="image" />
     </n-gi>
     <n-gi span="6">
-      <score-table :load="load"/>
+      <score-table :load="load" ref="score" />
     </n-gi>
   </n-grid>
 </template>

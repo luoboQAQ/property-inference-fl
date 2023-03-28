@@ -1,11 +1,23 @@
 <script setup>
 import { Info16Regular } from '@vicons/fluent'
+
+import score from '@/static/score-data.json'
+
 defineProps({
   load: {
     type: Boolean,
     required: true
   }
 })
+defineExpose({
+  update
+})
+
+let data = score['gender-race-0']
+
+function update(task, attr, property) {
+  data = score[`${task}-${attr}-${property}`]
+}
 </script>
 
 <template>
@@ -62,17 +74,17 @@ defineProps({
         <tbody>
           <tr>
             <td>0.0</td>
-            <td>1.00</td>
-            <td>1.00</td>
-            <td>1.00</td>
-            <td>45678</td>
+            <td>{{ data[0] }}</td>
+            <td>{{ data[1] }}</td>
+            <td>{{ data[2] }}</td>
+            <td>{{ data[3] }}</td>
           </tr>
           <tr>
             <td>1.0</td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>12345</td>
+            <td>{{ data[4] }}</td>
+            <td>{{ data[5] }}</td>
+            <td>{{ data[6] }}</td>
+            <td>{{ data[7] }}</td>
           </tr>
           <tr>
             <td>
@@ -88,10 +100,10 @@ defineProps({
                 </n-popover>
               </div>
             </td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>12345</td>
+            <td>{{ data[8] }}</td>
+            <td>{{ data[9] }}</td>
+            <td>{{ data[10] }}</td>
+            <td>{{ data[11] }}</td>
           </tr>
           <tr>
             <td>
@@ -107,10 +119,10 @@ defineProps({
                 </n-popover>
               </div>
             </td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>12345</td>
+            <td>{{ data[12] }}</td>
+            <td>{{ data[13] }}</td>
+            <td>{{ data[14] }}</td>
+            <td>{{ data[15] }}</td>
           </tr>
           <tr>
             <td>
@@ -126,10 +138,10 @@ defineProps({
                 </n-popover>
               </div>
             </td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>0.99</td>
-            <td>12345</td>
+            <td>{{ data[16] }}</td>
+            <td>{{ data[17] }}</td>
+            <td>{{ data[18] }}</td>
+            <td>{{ data[19] }}</td>
           </tr>
           <tr>
             <td>
@@ -146,7 +158,7 @@ defineProps({
               </div>
             </td>
             <td colspan="4">
-              1.00
+              {{ data[20] }}
             </td>
           </tr>
         </tbody>
