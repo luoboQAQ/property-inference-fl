@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import EChartImage from '@/components/EChartImage.vue'
 import ModelControl from '@/components/ModelControl.vue'
 import ModelInfo from '@/components/ModelInfo.vue'
+import ScoreTable from '@/components/ScoreTable.vue'
 
 const load = ref(false)
 const image = ref(null)
@@ -31,7 +32,14 @@ function update(task, attr, property, tittle) {
     </n-gi>
   </n-grid>
   <br />
-  <e-chart-image :load="load" ref="image" />
+  <n-grid x-gap="12" style="margin-top: 5px">
+    <n-gi span="18">
+      <e-chart-image :load="load" ref="image" />
+    </n-gi>
+    <n-gi span="6">
+      <score-table :load="load"/>
+    </n-gi>
+  </n-grid>
 </template>
 
 <style scoped>
