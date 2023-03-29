@@ -1,35 +1,18 @@
-# property-inference-fl
+# 联邦学习属性推理攻击可视化
 
-This template should help get you started developing with Vue 3 in Vite.
+项目使用Vue3开发
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## 开始使用
 
 ```sh
+# 安装依赖
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
+# 运行
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
+# 打包
 npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+# 语法规范检查
 npm run lint
+# 代码格式化
+npm run format
 ```

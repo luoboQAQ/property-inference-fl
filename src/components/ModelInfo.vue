@@ -1,12 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import num from '@/static/num-data.json'
+
 defineProps({
   load: {
     type: Boolean,
     required: true
   }
 })
-const trainData = ref(5198)
+defineExpose({
+  update
+})
+
+let data = num['gender-race-0']
+
+function update(task, attr, property) {
+  data = num[`${task}-${attr}-${property}`]
+}
 </script>
 
 <template>
@@ -15,13 +24,13 @@ const trainData = ref(5198)
       <n-grid>
         <n-gi span="12">
           <n-statistic label="训练集" tabular-nums>
-            <n-number-animation :from="0" :to="trainData" />
+            <n-number-animation :from="0" :to="data[0]" />
             <template #suffix> 组 </template>
           </n-statistic>
         </n-gi>
         <n-gi span="12">
           <n-statistic label="测试集" tabular-nums>
-            <n-number-animation :from="0" :to="2229" />
+            <n-number-animation :from="0" :to="data[1]" />
             <template #suffix> 组 </template>
           </n-statistic>
         </n-gi>
@@ -29,13 +38,13 @@ const trainData = ref(5198)
       <n-grid>
         <n-gi span="12">
           <n-statistic label="攻击者有标签数据" tabular-nums>
-            <n-number-animation :from="0" :to="514" />
+            <n-number-animation :from="0" :to="data[2]" />
             <template #suffix> 组 </template>
           </n-statistic>
         </n-gi>
         <n-gi span="12">
           <n-statistic label="攻击者无标签数据" tabular-nums>
-            <n-number-animation :from="0" :to="3046" />
+            <n-number-animation :from="0" :to="data[3]" />
             <template #suffix> 组 </template>
           </n-statistic>
         </n-gi>
