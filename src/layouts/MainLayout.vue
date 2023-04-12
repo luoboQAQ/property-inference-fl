@@ -4,18 +4,21 @@ import EChartImage from '@/components/EChartImage.vue'
 import ModelControl from '@/components/ModelControl.vue'
 import ModelInfo from '@/components/ModelInfo.vue'
 import ScoreTable from '@/components/ScoreTable.vue'
+import DataDistribution from '@/components/DataDistribution.vue'
 
 const load = ref(false)
 const image = ref(null)
 const score = ref(null)
+const distribution = ref(null)
 
 function update(task, attr, property, tittle) {
   load.value = true
   setTimeout(() => {
     image.value.update(task, attr, property, tittle)
     score.value.update(task, attr, property)
+    distribution.value.update(task, attr, property)
     load.value = false
-  }, 3000)
+  }, 2000)
 }
 </script>
 
@@ -40,6 +43,8 @@ function update(task, attr, property, tittle) {
     </n-gi>
     <n-gi span="6">
       <score-table :load="load" ref="score" />
+      <br />
+      <data-distribution :load="load" ref="distribution" />
     </n-gi>
   </n-grid>
 </template>
